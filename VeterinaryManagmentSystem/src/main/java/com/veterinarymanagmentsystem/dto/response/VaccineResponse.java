@@ -1,7 +1,6 @@
 package com.veterinarymanagmentsystem.dto.response;
 
 import com.veterinarymanagmentsystem.entities.Animal;
-import com.veterinarymanagmentsystem.entities.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,13 +12,11 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AnimalRepsonse {
-    private Long id;
+public class VaccineResponse {
+    private long id;
     private String name;
-    private String species;
-    private String breed;
-    private String color;
-    private Animal.Gender gender;
-    private LocalDate birthDate;
-    private Customer customer;
+    private String code;
+    private LocalDate protectionStartDate;
+    private LocalDate protectionFinishDate;
+    private Animal animal;
 }
