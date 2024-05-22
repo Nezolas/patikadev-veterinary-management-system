@@ -31,7 +31,17 @@ public class Animal {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     public enum Gender {
-        MALE,
-        FEMALE
+        MALE, FEMALE
     }
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    private Customer customer;
+
+    @OneToMany(mappedBy = "animal", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private List<Vaccine> vaccine;
+
+    @OneToMany(mappedBy = "animal", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private List<Appointment> appointment;
 }

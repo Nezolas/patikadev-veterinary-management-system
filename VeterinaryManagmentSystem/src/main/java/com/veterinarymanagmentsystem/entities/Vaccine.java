@@ -24,4 +24,12 @@ public class Vaccine {
     private String code;
     private LocalDate protectionStartDate;
     private LocalDate protectionEndDate;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "animal_id", referencedColumnName = "animal_id")
+    private Animal animal;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "report_id", referencedColumnName = "report_id")
+    private Report report;
 }

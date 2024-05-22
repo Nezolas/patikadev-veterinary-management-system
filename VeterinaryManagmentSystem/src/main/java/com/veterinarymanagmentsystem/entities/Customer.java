@@ -1,11 +1,14 @@
 package com.veterinarymanagmentsystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Table(name = "customer")
 @Entity
@@ -22,8 +25,11 @@ public class Customer {
     private String name;
     private String address;
     private String phone;
-
     @Email
     private String email;
     private String city;
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private List<Animal> animal;
 }

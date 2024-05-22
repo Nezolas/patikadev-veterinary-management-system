@@ -20,4 +20,11 @@ public class Appointment {
     @Column(name = "appointment_id")
     private long id;
     private LocalDate appointmentDate;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "animal_id", referencedColumnName = "animal_id")
+    private Animal animal;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "doctor_id", referencedColumnName = "doctor_id")
+    private Doctor doctor;
 }
