@@ -13,7 +13,7 @@ public class CustomerResponse {
     private long id;
     private String name;
     private String phone;
-    private String mail;
+    private String email;
     private String address;
     private String city;
 }

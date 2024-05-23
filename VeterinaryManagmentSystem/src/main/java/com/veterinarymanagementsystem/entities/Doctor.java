@@ -3,10 +3,7 @@ package com.veterinarymanagementsystem.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -16,6 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 
 public class Doctor {
     @Id
@@ -23,10 +21,12 @@ public class Doctor {
     @Column(name = "doctor_id")
     private long id;
     private String name;
+    @Column(nullable = false)
     @Email
     private String email;
     private String address;
     private String city;
+    @Column(nullable = false)
     private String phone;
 
     @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)

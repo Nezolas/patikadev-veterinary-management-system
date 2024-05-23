@@ -1,19 +1,17 @@
 package com.veterinarymanagementsystem.dto.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class DoctorResponse {
     private long id;
     private String name;
     private String phone;
-    private String mail;
+    private String email;
     private String address;
     private String city;
 }

@@ -1,24 +1,24 @@
 package com.veterinarymanagementsystem.dto.request;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class DoctorRequest {
     @NotBlank
     private String name;
-    //Pattern(regexp = "\\d{10} anotasyon 10 haneli karakter girilmesini zorunlu tutar d: digit (0-9), {10}: 10 karakterli dizi
-    @Pattern(regexp = "\\d{10}", message = "Telefon numarası 10 karakterden oluşmalı")
+   /* //Pattern(regexp = "\\d{10} anotasyon 10 haneli karakter girilmesini zorunlu tutar d: digit (0-9), {10}: 10 karakterli dizi
+    @Pattern(regexp = "\\d{10}", message = "Telefon numarası 10 karakterden oluşmalı")*/
+    @NotNull
+    private String phone;
+    @NotNull
+    @NotEmpty
     @Email
-    private String mail;
+    private String email;
     @NotBlank
     private String address;
     @NotBlank
