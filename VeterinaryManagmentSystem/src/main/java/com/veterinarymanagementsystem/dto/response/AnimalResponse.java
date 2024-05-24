@@ -1,7 +1,6 @@
 package com.veterinarymanagementsystem.dto.response;
 
 import com.veterinarymanagementsystem.entities.Animal;
-import com.veterinarymanagementsystem.entities.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +19,6 @@ public class AnimalResponse {
     private String breed;
     private String color;
     private Animal.Gender gender;
-    private LocalDate birthDate;
-    private Customer customer;
+    private LocalDate dateOfBirth;
+    private Long customerId;
 }

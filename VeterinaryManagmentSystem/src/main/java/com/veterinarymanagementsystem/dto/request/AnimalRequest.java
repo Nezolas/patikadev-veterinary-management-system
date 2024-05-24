@@ -1,7 +1,6 @@
 package com.veterinarymanagementsystem.dto.request;
 
 import com.veterinarymanagementsystem.entities.Animal;
-import com.veterinarymanagementsystem.entities.Customer;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
@@ -27,14 +26,13 @@ public class AnimalRequest {
     @NotBlank
     private String color;
 
-    private LocalDate birthDate;
+    private LocalDate dateOfBirth;
 
     @Enumerated(EnumType.STRING)
     private Animal.Gender gender;
     public enum Gender{
         MALE, FEMALE
     }
-
     @NotNull
-    private Customer customer;
+    private Long customerId;
 }

@@ -1,7 +1,6 @@
 package com.veterinarymanagementsystem.dto.request;
 
 import com.veterinarymanagementsystem.entities.Animal;
-import com.veterinarymanagementsystem.entities.Report;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -25,7 +24,6 @@ public class VaccineRequest {
     @NotNull
     private LocalDate protectionEndDate;
     @NotNull
-    private Animal animal;
-    @NotNull
-    private Report report;
+    private  Long animalId;
+//    private Animal animal;
 }

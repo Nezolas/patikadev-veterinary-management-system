@@ -21,13 +21,12 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "animal_id")
-    private long id;
+    private Long id;
     private String name;
     private String species;
     private String breed;
     private String color;
     private LocalDate dateOfBirth;
-    private String colour;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     public enum Gender {

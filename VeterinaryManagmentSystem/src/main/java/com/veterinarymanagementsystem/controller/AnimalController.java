@@ -39,7 +39,7 @@ public class AnimalController {
         return animalService.getByName(name);
     }
 
-    @PostMapping
+    @PostMapping("/new/save")
     @ResponseStatus(HttpStatus.CREATED)
     public AnimalResponse save(@RequestBody AnimalRequest request){
         return animalService.create(request);

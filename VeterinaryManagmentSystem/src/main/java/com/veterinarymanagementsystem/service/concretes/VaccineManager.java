@@ -48,7 +48,8 @@ public class VaccineManager implements VaccineService {
     @Override
     public VaccineResponse create(VaccineRequest request) {
         Optional<Vaccine> isVaccineExist = vaccineRepository.findByNameAndCodeAndAnimalId(request.getName(),
-                request.getCode(), request.getAnimal().getId());
+            request.getCode(), request.getAnimalId());
+//                request.getCode(), request.getAnimal().getId());
         if (isVaccineExist.isEmpty()){
             Vaccine vaccineSaved = vaccineRepository.save(vaccineMapper.asEntity(request));
             return vaccineMapper.asOutput(vaccineSaved);
@@ -70,7 +71,8 @@ public class VaccineManager implements VaccineService {
             throw new NotFoundException(Msg.NOT_FOUND);
         }
         Optional<Vaccine> newVaccine = vaccineRepository.findByNameAndCodeAndAnimalId(request.getName(),
-                request.getCode(), request.getAnimal().getId());
+                request.getCode(), request.getAnimalId());
+//                request.getCode(), request.getAnimal().getId());
         if (newVaccine.isPresent() && newVaccine.get().getId() != id){
             throw new DataExistsException(Msg.DATA_EXISTS);
         }

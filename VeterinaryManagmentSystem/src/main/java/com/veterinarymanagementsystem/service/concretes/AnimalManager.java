@@ -2,13 +2,16 @@ package com.veterinarymanagementsystem.service.concretes;
 
 import com.veterinarymanagementsystem.core.exception.DataExistsException;
 import com.veterinarymanagementsystem.core.exception.NotFoundException;
+import com.veterinarymanagementsystem.core.result.ResultData;
 import com.veterinarymanagementsystem.core.utilities.Msg;
 import com.veterinarymanagementsystem.dto.request.AnimalRequest;
 import com.veterinarymanagementsystem.dto.response.AnimalResponse;
 import com.veterinarymanagementsystem.entities.Animal;
+import com.veterinarymanagementsystem.entities.Customer;
 import com.veterinarymanagementsystem.mapper.AnimalMapper;
 import com.veterinarymanagementsystem.repository.AnimalRepository;
 import com.veterinarymanagementsystem.service.abstracts.AnimalService;
+import com.veterinarymanagementsystem.service.abstracts.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +23,7 @@ import java.util.Optional;
 public class AnimalManager implements AnimalService {
     private final AnimalRepository animalRepository;
     private final AnimalMapper animalMapper;
+    private final CustomerService customerService;
 
     @Override
     public List<AnimalResponse> findAll() {
@@ -42,7 +46,7 @@ public class AnimalManager implements AnimalService {
 
     @Override
     public AnimalResponse create(AnimalRequest request) {
-        Optional<Animal> isAnimalExist = animalRepository.findByCustomerIdAndName(request.getCustomer().getId(), request.getName());
+        Optional<Animal> isAnimalExist = animalRepository.findByCustomerIdAndName(request.getCustomerId(), request.getName());
         if (isAnimalExist.isEmpty()){
             Animal animalSaved = animalRepository.save(animalMapper.asEntity(request));
             return animalMapper.asOutput(animalSaved);
@@ -50,13 +54,14 @@ public class AnimalManager implements AnimalService {
         throw new DataExistsException(Msg.DATA_EXISTS);
     }
 
+
     @Override
     public AnimalResponse update(Long id, AnimalRequest request) {
         Optional<Animal> animalFromDb = animalRepository.findById(id);
         if (animalFromDb.isEmpty()){
             throw new NotFoundException(Msg.NOT_FOUND);
         }
-        long newCustomerId = request.getCustomer().getId();
+        Long newCustomerId = request.getCustomerId();
         String newName = request.getName();
         Optional<Animal> newAnimal = animalRepository.findByCustomerIdAndName(newCustomerId, newName);
         if (newAnimal.isPresent() && newAnimal.get().getId() != id){

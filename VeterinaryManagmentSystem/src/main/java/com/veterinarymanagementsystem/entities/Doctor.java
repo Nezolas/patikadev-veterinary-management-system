@@ -19,7 +19,7 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "doctor_id")
-    private long id;
+    private Long id;
     private String name;
     @Column(nullable = false)
     @Email
