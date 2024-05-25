@@ -3,6 +3,7 @@ package com.veterinarymanagementsystem.service.abstracts;
 import com.veterinarymanagementsystem.dto.response.AnimalResponse;
 import com.veterinarymanagementsystem.dto.request.AnimalRequest;
 
+
 import java.util.List;
 
 public interface AnimalService {

@@ -2,12 +2,10 @@ package com.veterinarymanagementsystem.service.concretes;
 
 import com.veterinarymanagementsystem.core.exception.DataExistsException;
 import com.veterinarymanagementsystem.core.exception.NotFoundException;
-import com.veterinarymanagementsystem.core.result.ResultData;
 import com.veterinarymanagementsystem.core.utilities.Msg;
 import com.veterinarymanagementsystem.dto.request.AnimalRequest;
 import com.veterinarymanagementsystem.dto.response.AnimalResponse;
 import com.veterinarymanagementsystem.entities.Animal;
-import com.veterinarymanagementsystem.entities.Customer;
 import com.veterinarymanagementsystem.mapper.AnimalMapper;
 import com.veterinarymanagementsystem.repository.AnimalRepository;
 import com.veterinarymanagementsystem.service.abstracts.AnimalService;
@@ -35,14 +33,21 @@ public class AnimalManager implements AnimalService {
         return animalMapper.asOutput(animalRepository.findById(id).orElseThrow(() -> new NotFoundException(Msg.NOT_FOUND)));
     }
 
-
-    @Override
+/*    @Override
     public List<AnimalResponse> getByCustomer(Long id) {
         if (animalRepository.findByCustomerId(id).isEmpty()){
             throw new NotFoundException(Msg.NOT_FOUND);
         }
         return animalMapper.asOutput(animalRepository.findByCustomerId(id));
+    }*/
+@Override
+public List<AnimalResponse> getByCustomer(Long id) {
+    List<Animal> animals = animalRepository.findByCustomerId(id);
+    if (animals.isEmpty()) {
+        throw new NotFoundException(Msg.NOT_FOUND);
     }
+    return animalMapper.asOutputList(animals);
+}
 
     @Override
     public AnimalResponse create(AnimalRequest request) {
