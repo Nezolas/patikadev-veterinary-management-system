@@ -1,7 +1,5 @@
 package com.veterinarymanagementsystem.dto.response;
 
-import com.veterinarymanagementsystem.entities.Animal;
-import com.veterinarymanagementsystem.entities.Doctor;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,8 +12,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AppointmentResponse {
-    private long id;
+    private Long id;
     private LocalDateTime appointmentDate;
-    private Animal animal;
-    private Doctor doctor;
+    private Long doctorId;
+    private Long animalId;
+
+    /*    private Animal animal;
+    private Doctor doctor;*/
 }

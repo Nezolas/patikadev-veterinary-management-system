@@ -9,11 +9,11 @@ import java.util.List;
 
 public interface AppointmentService {
     public List<AppointmentResponse> findAll();
-    public AppointmentResponse getById(long id);
+    public AppointmentResponse getById(Long id);
     public AppointmentResponse create(AppointmentRequest request);
-    public AppointmentResponse update(long id, AppointmentRequest request);
-    public void deleteById(long id);
-    public boolean isDoctorAvailableAtTime(long doctorId, LocalDateTime appointmentDate);
-    public List<AppointmentResponse> getAnimalAppointmentDateInRange(long animalId, LocalDate startDate, LocalDate endDate);
-    public List<AppointmentResponse> getDoctorAppointmentDateInRange(long doctorId, LocalDate startDate, LocalDate endDate);
+    public AppointmentResponse update(Long id, AppointmentRequest request);
+    public void deleteById(Long id);
+    public boolean isDoctorAvailableAtTime(Long doctorId, LocalDateTime appointmentDate);
+    public List<AppointmentResponse> getAnimalAppointmentDateInRange(Long animalId, LocalDate startDate, LocalDate endDate);
+    public List<AppointmentResponse> getDoctorAppointmentDateInRange(Long doctorId, LocalDate startDate, LocalDate endDate);
 }

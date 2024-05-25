@@ -32,16 +32,16 @@ public class AppointmentManager implements AppointmentService {
     }
 
     @Override
-    public AppointmentResponse getById(long id) {
+    public AppointmentResponse getById(Long id) {
         return appointmentMapper.asOutput(appointmentRepository.findById(id).orElseThrow(() -> new NotFoundException(Msg.NOT_FOUND)));
     }
 
     @Override
     public AppointmentResponse create(AppointmentRequest request) {
-        if (!availableDateManager.existByDoctorIdAndAvailableDate(request.getDoctor().getId(), request.getAppointmentDate().toLocalDate())){ // Değerledirme 22
+        if (!availableDateManager.existByDoctorIdAndAvailableDate(request.getDoctorId(), request.getAppointmentDate().toLocalDate())){
             throw new NotFoundException(Msg.APPOINMENT_NOT_FOUND);
         }
-        if (!isDoctorAvailableAtTime(request.getDoctor().getId(), request.getAppointmentDate())){ // Değerledirme 22
+        if (!isDoctorAvailableAtTime(request.getAnimalId(), request.getAppointmentDate())){
             throw new NotFoundException(Msg.APPOINMENT_NOT_FOUND);
         }
         Appointment appointmentSaved = appointmentRepository.save(appointmentMapper.asEntity(request));
@@ -49,12 +49,12 @@ public class AppointmentManager implements AppointmentService {
     }
 
     @Override
-    public AppointmentResponse update(long id, AppointmentRequest request) {
+    public AppointmentResponse update(Long id, AppointmentRequest request) {
         Optional<Appointment> appointmentFromDb = appointmentRepository.findById(id);
         if (appointmentFromDb.isEmpty()){
             throw new NotFoundException(Msg.NOT_FOUND);
         }
-        Optional<Appointment> newAppointment = appointmentRepository.findByDoctorIdAndAppointmentDate(request.getDoctor().getId(), request.getAppointmentDate());
+        Optional<Appointment> newAppointment = appointmentRepository.findByDoctorIdAndAppointmentDate(request.getDoctorId(), request.getAppointmentDate());
         if (newAppointment.isPresent() && newAppointment.get().getId() != id){
             throw new DataExistsException(Msg.DATA_EXISTS);
         }
@@ -64,7 +64,7 @@ public class AppointmentManager implements AppointmentService {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Optional<Appointment> appointmentFromDb = appointmentRepository.findById(id);
         if (appointmentFromDb.isPresent()){
             appointmentRepository.delete(appointmentFromDb.get());
@@ -74,19 +74,19 @@ public class AppointmentManager implements AppointmentService {
     }
 
     @Override
-    public boolean isDoctorAvailableAtTime(long doctorId, LocalDateTime appointmentDate) {
+    public boolean isDoctorAvailableAtTime(Long doctorId, LocalDateTime appointmentDate) {
         return !appointmentRepository.existsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
     }
 
     @Override
-    public List<AppointmentResponse> getAnimalAppointmentDateInRange(long animalId, LocalDate startDate, LocalDate endDate) {
+    public List<AppointmentResponse> getAnimalAppointmentDateInRange(Long animalId, LocalDate startDate, LocalDate endDate) {
         LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.MIN);
         LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.MAX);
         return appointmentMapper.asOutput(appointmentRepository.findByAnimalIdAndAppointmentDateBetween(animalId, startDateTime, endDateTime));
     }
 
     @Override
-    public List<AppointmentResponse> getDoctorAppointmentDateInRange(long doctorId, LocalDate startDate, LocalDate endDate) {
+    public List<AppointmentResponse> getDoctorAppointmentDateInRange(Long doctorId, LocalDate startDate, LocalDate endDate) {
         LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.MIN);
         LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.MAX);
         return appointmentMapper.asOutput(appointmentRepository.findByDoctorIdAndAppointmentDateBetween(doctorId, startDateTime, endDateTime));

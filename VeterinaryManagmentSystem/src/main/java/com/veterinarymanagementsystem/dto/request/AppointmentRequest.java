@@ -1,7 +1,5 @@
 package com.veterinarymanagementsystem.dto.request;
 
-import com.veterinarymanagementsystem.entities.Animal;
-import com.veterinarymanagementsystem.entities.Doctor;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,7 +16,8 @@ public class AppointmentRequest {
     @NotNull
     private LocalDateTime appointmentDate;
     @NotNull
-    private Animal animal;
+    private Long animalId;
     @NotNull
-    private Doctor doctor;
+    private  Long doctorId;
+
 }
