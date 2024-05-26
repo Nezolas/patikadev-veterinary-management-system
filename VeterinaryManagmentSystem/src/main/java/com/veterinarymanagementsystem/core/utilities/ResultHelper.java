@@ -3,6 +3,7 @@ package com.veterinarymanagementsystem.core.utilities;
 import com.veterinarymanagementsystem.core.result.Result;
 import com.veterinarymanagementsystem.core.result.ResultData;
 
+// API yanıtlarını oluşturmak için yardımcı metotlar içeren yardımcı sınıf
 public class ResultHelper {
     public static <T> ResultData<T> created(T data){
         return new ResultData<>(true, Msg.CREATED, "201", data);

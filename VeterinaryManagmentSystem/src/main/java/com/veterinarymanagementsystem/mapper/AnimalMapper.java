@@ -21,6 +21,8 @@ public interface AnimalMapper {
 
     List<AnimalResponse> asOutput(List<Animal> animal);
     void update(@MappingTarget Animal entity, AnimalRequest request);
+
+    // Müşteri kimliğini Müşteri nesnesine eşleyen metot
     default Customer map(Long id) {
         if (id == null) {
             return null;

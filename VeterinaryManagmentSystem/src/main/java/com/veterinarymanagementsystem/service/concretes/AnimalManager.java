@@ -40,14 +40,15 @@ public class AnimalManager implements AnimalService {
         }
         return animalMapper.asOutput(animalRepository.findByCustomerId(id));
     }*/
-@Override
-public List<AnimalResponse> getByCustomer(Long id) {
-    List<Animal> animals = animalRepository.findByCustomerId(id);
-    if (animals.isEmpty()) {
-        throw new NotFoundException(Msg.NOT_FOUND);
+
+    @Override
+    public List<AnimalResponse> getByCustomer(Long id) {
+        List<Animal> animals = animalRepository.findByCustomerId(id);
+            if (animals.isEmpty()) {
+            throw new NotFoundException(Msg.NOT_FOUND);
+        }
+            return animalMapper.asOutputList(animals);
     }
-    return animalMapper.asOutputList(animals);
-}
 
     @Override
     public AnimalResponse create(AnimalRequest request) {

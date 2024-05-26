@@ -16,24 +16,25 @@ import java.util.List;
 public class VaccineController {
     private final VaccineService vaccineService;
 
+    // Tüm aşıları listelemek için kullanılan endpoint
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<VaccineResponse> findAll(){
         return vaccineService.findAll();
     }
-
+    // Belirli bir aşının bilgilerini getirmek için kullanılan endpoint
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public VaccineResponse getById(@PathVariable("id") long id){
         return vaccineService.getById(id);
     }
-
+    // Belirli bir hayvana ait aşıları getirmek için kullanılan endpoint
     @GetMapping("/animal/{id}")
     @ResponseStatus(HttpStatus.OK)
     public List<VaccineResponse> getByAnimal(@PathVariable("id") long id){
         return vaccineService.getByAnimal(id);
     }
-
+    // Belirli bir tarih aralığında yapılan aşıları getirmek için kullanılan endpoint
     @GetMapping("/date-range")
     @ResponseStatus(HttpStatus.OK)
     public List<VaccineResponse> getVaccineInDateRange(
@@ -42,19 +43,19 @@ public class VaccineController {
     ){
         return vaccineService.getVaccinesInDateRange(startDate, endDate);
     }
-
+    // Yeni bir aşı kaydı oluşturmak için kullanılan endpoint
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public VaccineResponse save(@RequestBody VaccineRequest request){
         return vaccineService.create(request);
     }
-
+    // Mevcut bir aşı kaydını güncellemek için kullanılan endpoint
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public VaccineResponse update(@PathVariable("id") long id, @RequestBody VaccineRequest request){
         return vaccineService.update(id, request);
     }
-
+    // Belirli bir aşı kaydını silmek için kullanılan endpoint
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") long id){

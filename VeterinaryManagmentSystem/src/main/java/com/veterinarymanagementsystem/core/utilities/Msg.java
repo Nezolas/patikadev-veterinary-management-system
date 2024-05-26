@@ -1,5 +1,6 @@
 package com.veterinarymanagementsystem.core.utilities;
 
+// Mesajları ve sabit metinleri depolamak için kullanılan sınıf
 public class Msg {
     public static final String CREATED = "Entry Added.";
     public static final String VALIDATE_ERROR = "Data Validation Error";

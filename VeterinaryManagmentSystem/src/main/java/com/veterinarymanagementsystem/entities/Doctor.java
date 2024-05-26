@@ -30,9 +30,9 @@ public class Doctor {
 
     @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JsonIgnore
-    private List<AvailableDate> availableDate;
+    private List<AvailableDate> availableDate; // Doktora ait uygun tarihler listesi
 
     @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JsonIgnore
-    private List<Appointment> appointment;
+    private List<Appointment> appointment;  // Doktora ait randevular listesi
 }

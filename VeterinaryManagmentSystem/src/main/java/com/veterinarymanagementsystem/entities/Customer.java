@@ -31,5 +31,5 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JsonIgnore
-    private List<Animal> animal;
+    private List<Animal> animal; // Müşteriye ait hayvanların listesi
 }

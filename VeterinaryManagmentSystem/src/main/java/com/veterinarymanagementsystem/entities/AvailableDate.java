@@ -26,5 +26,5 @@ public class AvailableDate {
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "doctor_id", referencedColumnName = "doctor_id")
-    private Doctor doctor;
+    private Doctor doctor; // Müsait tarihin ait olduğu doktor
 }

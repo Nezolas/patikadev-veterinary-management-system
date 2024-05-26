@@ -18,6 +18,8 @@ public interface VaccineMapper {
     VaccineResponse asOutput(Vaccine vaccine);
     List<VaccineResponse> asOutput(List<Vaccine> vaccine);
     void update(@MappingTarget Vaccine entity, VaccineRequest request);
+
+    // Hayvan kimliğini Hayvan nesnesine eşleyen metot
     default Animal map(Long id) {
         if (id == null) {
             return null;

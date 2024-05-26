@@ -20,6 +20,8 @@ public interface AppointmentMapper {
     @Mapping(source = "animal.id", target = "animalId")
     AppointmentResponse asOutput(Appointment appointment);
     void update(@MappingTarget Appointment entity, AppointmentRequest request);
+
+    // Doktor kimliğini Doktor nesnesine eşleyen metot
     default Doctor mapDoctor(Long id) {
         if (id == null) {
             return null;
@@ -28,6 +30,7 @@ public interface AppointmentMapper {
         doctor.setId(id);
         return doctor;
     }
+    // Hayvan kimliğini Hayvan nesnesine eşleyen metot
     default Animal mapAnimal(Long id) {
         if (id == null) {
             return null;

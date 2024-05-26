@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    // NotFoundException türündeki istisnaları işleyen metot
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Result> handleNotFoundException(NotFoundException e){
         return new ResponseEntity<>(ResultHelper.notFoundError(e.getMessage()), HttpStatus.NOT_FOUND);
     }
-
-    @ExceptionHandler(DataExistsException.class)
+    // DataExistsException türündeki istisnaları işleyen metot    @ExceptionHandler(DataExistsException.class)
     public ResponseEntity<Result> handleDataExistsException(DataExistsException e){
         return new ResponseEntity<>(ResultHelper.dataAlreadyExistError(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
