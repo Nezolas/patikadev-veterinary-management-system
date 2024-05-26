@@ -84,6 +84,7 @@ Below is a list of basic endpoints provided by the API:
 | /api/v1/vaccines                              | DELETE      | The vaccine of a specific id is deleted.                                            |
 
 ## Database
+The veterinary management system database is created and exported with pgAdmin 4, for better import experience pgAdmin 4 is recommended.
 
 ### Doctor
 ![DB-doctor](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/ed16786b-2637-453e-9f86-f813aa98e69c)
