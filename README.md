@@ -3,6 +3,33 @@
  ## UML Diagram
 ![diagram-export-5-26-2024-7_16_24-PM](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/798b5bd6-4274-4a9a-9788-d169b4c808ed)
 
+## Technologies
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Maven
+- PostgreSQL
+- Lombok
+- Mapstruct
+- Swagger
+- Postman
+
+The application will run by default at http://localhost:8080.
+
+## Project Structure
+
+The project includes the following components:
+
+- **CONTROLLER**
+- **CORE**
+- **DTO**
+- **ENTITIES**
+- **MAPPER**
+- **REPOSITORY**
+- **SERVICE**
+
+## Endpoints
 Below is a list of basic endpoints provided by the API:
 
 | Endpoint                                      | HTTP Method | Description                                                                         |
