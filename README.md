@@ -82,3 +82,25 @@ Below is a list of basic endpoints provided by the API:
 | /api/v1/vaccines                              | POST        | Add new Vaccine.                                                                    |
 | /api/v1/vaccines                              | PUT         | The vaccine of a specific id is updated.                                            |
 | /api/v1/vaccines                              | DELETE      | The vaccine of a specific id is deleted.                                            |
+
+## Database
+
+### Doctor
+![DB-doctor](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/ed16786b-2637-453e-9f86-f813aa98e69c)
+
+### Available Date
+![DB-availabledate](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/60b5028a-9635-4d18-ae76-84722c592046)
+
+###Customer
+![DB-customer](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/8f7d19e1-a907-4547-861f-fe19933931e3)
+
+### Animals
+![DB-animal](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/401beadf-f6b7-4a06-9b0b-8dc974cc760a)
+
+### Vaccine
+![DB-vaccine](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/a34d91e4-06c6-4656-b1d5-313c18123dd4)
+
+### Appointment
+![DB-appointment](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/3d781023-ea8b-4618-b784-79f249051b41)
+
+
