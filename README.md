@@ -19,7 +19,8 @@ Register veterinarians, record the working days (available days) of the doctors 
 - Swagger
 - Postman
 
-The application will run by default at http://localhost:8080.
+- The application will run by default at http://localhost:8080.
+- Also you can control the app via Swagger with this URL; http://localhost:8080/swagger-ui/index.html#/
 
 ## Project Structure
 
