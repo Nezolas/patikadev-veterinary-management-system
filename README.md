@@ -64,6 +64,7 @@ Below is a list of basic endpoints provided by the API:
 | /api/v1/available-date                        | POST        | Add new AvailableDate.                                                              |
 | /api/v1/available-date/{id}                   | PUT         | The available date of a specific id is updated.                                     |
 | /api/v1/available-date/{id}                   | DELETE      | The available date of a specific id is deleted.                                     |
+|                                               |             |                                                                                     |
 |*CUSTOMERS*                                    |             |                                                                                     |
 | /api/v1/customers                             | GET         | List of all customers.                                                              |
 | /api/v1/customers/{id}                        | GET         | Customer by id number.                                                              |
