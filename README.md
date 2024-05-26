@@ -1,4 +1,8 @@
 # Veterinary Management System
+We have developed an API that allows a veterinary clinic to manage its operations with a veterinary management system project.
+
+The application is designed to be used by veterinary staff. With this application, the staff can:
+Register veterinarians, record the working days (available days) of the doctors as dates without time, register customers, register animals belonging to the customers, record vaccinations applied to the animals along with the dates, create appointments for animals with the veterinarians, enter the date and time when creating an appointment, check the availability of the doctor for the given date without time, and check the existing appointment records for date and time to avoid conflicts. If there are no conflicts in the records, the appointment is created.
 
  ## UML Diagram
 ![diagram-export-5-26-2024-7_16_24-PM](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/798b5bd6-4274-4a9a-9788-d169b4c808ed)
