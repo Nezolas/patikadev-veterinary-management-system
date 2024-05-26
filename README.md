@@ -38,7 +38,7 @@ Below is a list of basic endpoints provided by the API:
 
 | Endpoint                                      | HTTP Method | Description                                                                         |
 |-----------------------------------------------|:------------|-------------------------------------------------------------------------------------|
-|  **Animals**                                  |             |                                                                                     |
+|  *Animals*                                  |             |                                                                                     |
 | /api/v1/animals                               | GET         | List of all animals                                                                 |
 | /api/v1/animals/{id}                          | GET         | Animal by id number                                                                 |
 | /api/v1/animals/customer/{id}                 | GET         | All animals belonging to a customer are listed.                                     |    
