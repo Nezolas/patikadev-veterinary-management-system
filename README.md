@@ -38,6 +38,7 @@ Below is a list of basic endpoints provided by the API:
 
 | Endpoint                                      | HTTP Method | Description                                                                         |
 |-----------------------------------------------|:------------|-------------------------------------------------------------------------------------|
+|                                               |             |                                                                                     |
 |  *ANIMALS*                                    |             |                                                                                     |
 | /api/v1/animals                               | GET         | List of all animals                                                                 |
 | /api/v1/animals/{id}                          | GET         | Animal by id number                                                                 |
@@ -46,6 +47,7 @@ Below is a list of basic endpoints provided by the API:
 | /api/v1/animals                               | POST        | Add new animal.                                                                     |
 | /api/v1/animals/{id}                          | PUT         | The animal of a specific id is updated.                                             | 
 | /api/v1/animals/{id}                          | DELETE      | The animal of a specific id is deleted.                                             |
+|                                               |             |                                                                                     |
 |*APPOINTMENTS*                                 |             |                                                                                     |
 | /api/v1/appointments                          | GET         | List of all appointments.                                                           |
 | /api/v1/appointments/{id}                     | GET         | Appointment by id number.                                                           |
@@ -54,6 +56,7 @@ Below is a list of basic endpoints provided by the API:
 | /api/v1/appointments                          | POST        | Add new appointment.                                                                |
 | /api/v1/appointments/{id}                     | PUT         | The appointment of a specific id is updated.                                        |
 | /api/v1/appointments/{id}                     | DELETE      | The appointment of a specific id is deleted.                                        |
+|                                               |             |                                                                                     |
 |*AVAILABLE DATES*                              |             |                                                                                     |
 | /api/v1/available-date                        | GET         | List of all available dates.                                                        |
 | /api/v1/available-date/{id}                   | GET         | Available date by id number.                                                        |
@@ -68,12 +71,14 @@ Below is a list of basic endpoints provided by the API:
 | /api/v1/customers                             | POST        | Add new Customer.                                                                   |
 | /api/v1/customers/{id}                        | PUT         | The customer of a specific id is updated.                                           |
 | /api/v1/customers/{id}                        | DELETE      | The customer of a specific id is deleted.                                           |
+|                                               |             |                                                                                     |
 |*DOCTORS*                                      |             |                                                                                     |
 | /api/v1/doctors                               | GET         | List of all doctors.                                                                |
 | /api/v1/doctors/{id}                          | GET         | Doctor by id number.                                                                |   
 | /api/v1/doctors                               | POST        | Add new Doctor.                                                                     |
 | /api/v1/doctors/{id}                          | PUT         | The doctor of a specific id is updated.                                             |
 | /api/v1/doctors/{id}                          | DELETE      | The doctor of a specific id is deleted.                                             |
+|                                               |             |                                                                                     |
 |*VACCINES*                                     |             |                                                                                     |
 | /api/v1/vaccines                              | GET         | List of all vaccines.                                                               |
 | /api/v1/vaccines/{id}                         | GET         | Vaccine by id number.                                                               |
