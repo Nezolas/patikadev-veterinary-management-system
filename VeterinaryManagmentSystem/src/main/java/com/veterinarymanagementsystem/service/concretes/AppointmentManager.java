@@ -54,7 +54,7 @@ public class AppointmentManager implements AppointmentService {
         if (appointmentFromDb.isEmpty()){
             throw new NotFoundException(Msg.NOT_FOUND);
         }
-        Optional<Appointment> newAppointment = appointmentRepository.findByDoctorIdAndAppointmentDate(request.getDoctorId(), request.getAppointmentDate());
+        Optional<Appointment> newAppointment = appointmentRepository.findByDoctorIdAndAppointmentDate(request.getDoctorId(), LocalDate.from(request.getAppointmentDate()));
         if (newAppointment.isPresent() && newAppointment.get().getId() != id){
             throw new DataExistsException(Msg.DATA_EXISTS);
         }
@@ -75,21 +75,21 @@ public class AppointmentManager implements AppointmentService {
 
     @Override
     public boolean isDoctorAvailableAtTime(Long doctorId, LocalDateTime appointmentDate) {
-        return !appointmentRepository.existsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
+        return !appointmentRepository.existsByDoctorIdAndAppointmentDate(doctorId, LocalDate.from(appointmentDate));
     }
 
     @Override
     public List<AppointmentResponse> getAnimalAppointmentDateInRange(Long animalId, LocalDate startDate, LocalDate endDate) {
         LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.MIN);
         LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.MAX);
-        return appointmentMapper.asOutput(appointmentRepository.findByAnimalIdAndAppointmentDateBetween(animalId, startDateTime, endDateTime));
+        return appointmentMapper.asOutput(appointmentRepository.findByAnimalIdAndAppointmentDateBetween(animalId, LocalDate.from(startDateTime), LocalDate.from(endDateTime)));
     }
 
     @Override
     public List<AppointmentResponse> getDoctorAppointmentDateInRange(Long doctorId, LocalDate startDate, LocalDate endDate) {
         LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.MIN);
         LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.MAX);
-        return appointmentMapper.asOutput(appointmentRepository.findByDoctorIdAndAppointmentDateBetween(doctorId, startDateTime, endDateTime));
+        return appointmentMapper.asOutput(appointmentRepository.findByDoctorIdAndAppointmentDateBetween(doctorId, LocalDate.from(startDateTime), LocalDate.from(endDateTime)));
     }
 
 }

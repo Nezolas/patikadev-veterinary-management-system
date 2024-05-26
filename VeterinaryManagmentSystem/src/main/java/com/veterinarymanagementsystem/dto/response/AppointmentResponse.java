@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class AppointmentResponse {
     private Long id;
-    private LocalDateTime appointmentDate;
+    private LocalDate appointmentDate;
     private Long doctorId;
     private Long animalId;
 
