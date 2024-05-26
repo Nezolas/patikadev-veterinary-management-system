@@ -91,7 +91,7 @@ Below is a list of basic endpoints provided by the API:
 ### Available Date
 ![DB-availabledate](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/60b5028a-9635-4d18-ae76-84722c592046)
 
-###Customer
+### Customer
 ![DB-customer](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/8f7d19e1-a907-4547-861f-fe19933931e3)
 
 ### Animals
