@@ -4,7 +4,6 @@ import com.veterinarymanagementsystem.core.exception.DataExistsException;
 import com.veterinarymanagementsystem.core.exception.NotFoundException;
 import com.veterinarymanagementsystem.core.utilities.Msg;
 import com.veterinarymanagementsystem.core.utilities.ResultHelper;
-import com.veterinarymanagementsystem.dto.Converter;
 import com.veterinarymanagementsystem.dto.request.DoctorRequest;
 import com.veterinarymanagementsystem.dto.response.DoctorResponse;
 import com.veterinarymanagementsystem.entities.Doctor;
