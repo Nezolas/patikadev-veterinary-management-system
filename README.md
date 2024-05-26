@@ -86,13 +86,13 @@ Below is a list of basic endpoints provided by the API:
 ## Database
 The veterinary management system database is created and exported with pgAdmin 4, for better import experience **pgAdmin 4** is recommended.
 
-### Doctor
+### Doctors
 ![DB-doctor](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/ed16786b-2637-453e-9f86-f813aa98e69c)
 
 ### Available Date
 ![DB-availabledate](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/60b5028a-9635-4d18-ae76-84722c592046)
 
-### Customer
+### Customers
 ![DB-customer](https://github.com/Nezolas/patikadev-veterinary-management-system/assets/25018831/8f7d19e1-a907-4547-861f-fe19933931e3)
 
 ### Animals
