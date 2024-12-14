@@ -21,12 +21,14 @@ public class AnimalController {
     public List<AnimalResponse> findAll(){
         return animalService.findAll();
     }
+
     // Belirli bir hayvanın bilgilerini getirmek için kullanılan endpoint
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public AnimalResponse getById(@PathVariable("id") long id){
         return animalService.getById(id);
     }
+
     // Belirli bir müşteriye ait hayvanları listelemek için kullanılan endpoint
     @GetMapping("/customer/{id}")
     @ResponseStatus(HttpStatus.OK)
